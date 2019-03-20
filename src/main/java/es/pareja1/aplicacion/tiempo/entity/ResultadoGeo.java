@@ -2,9 +2,6 @@ package es.pareja1.aplicacion.tiempo.entity;
 
 import java.util.List;
 
-import javax.persistence.Entity;
-
-@Entity
 public class ResultadoGeo {
 	private int resultado;
 	private List<GeoName> geoNames;

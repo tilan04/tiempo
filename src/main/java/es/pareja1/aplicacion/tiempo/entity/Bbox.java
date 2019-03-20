@@ -1,8 +1,5 @@
 package es.pareja1.aplicacion.tiempo.entity;
 
-import javax.persistence.Entity;
-
-@Entity
 public class Bbox {
 	private long north;
 	private long south;

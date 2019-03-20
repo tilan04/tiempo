@@ -1,8 +1,5 @@
 package es.pareja1.aplicacion.tiempo.entity;
 
-import javax.persistence.Entity;
-
-@Entity
 public class WeatherObservations {
 	private double lng;
 	private double lat;

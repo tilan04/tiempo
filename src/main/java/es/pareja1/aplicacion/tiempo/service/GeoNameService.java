@@ -13,7 +13,7 @@ import es.pareja1.aplicacion.tiempo.entity.GeoName;
 @Service
 public class GeoNameService {
 	
-	@Autowired
+	
 	private String asciiName;
 	private List<Bbox> bboxes;
 	

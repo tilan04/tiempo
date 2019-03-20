@@ -1,9 +1,6 @@
 package es.pareja1.aplicacion.tiempo.entity;
 
 
-import javax.persistence.Entity;
-
-@Entity
 public class GeoName {
 	private String asciiName;
 	private Bbox bbox;

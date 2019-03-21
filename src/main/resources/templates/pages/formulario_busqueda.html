@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:with="http://www.thymeleaf.org/extras/with"
+	layout:decorate="~{layout}" with:title="'El tiempo'">
+<body>
+	<h1>Ingrese la ciudad que quiere consultar</h1>
+
+	<form action="resultadoPeticiones" method="post">
+	<p th:text="${#request.getParameter('q')" >Nombre:</p>
+		 <br /> <input type="text" name="nombre"> Buscar <input type="submit" />
+	</form>
+	
+</body>
+</html>

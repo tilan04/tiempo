@@ -1,31 +1,36 @@
 package es.pareja1.aplicacion.tiempo.entity;
 
+
 import java.util.List;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class ResultadoGeo {
-	private int resultado;
-	private List<GeoName> geoNames;
+	private int totalResultsCount;
+	private List<GeoName> geonames;
 
-	public ResultadoGeo(int resultado, List<GeoName> geoNames) {
+	public ResultadoGeo () {}
+	public ResultadoGeo(int totalResultsCount, List<GeoName> geoNames) {
 		super();
-		this.resultado = resultado;
-		this.geoNames = geoNames;
+		this.totalResultsCount = totalResultsCount;
+		this.geonames = geoNames;
+	}
+	public int getTotalResultsCount() {
+		return totalResultsCount;
+	}
+	public void setTotalResultsCount(int totalResultsCount) {
+		this.totalResultsCount = totalResultsCount;
+	}
+	public List<GeoName> getGeonames() {
+		return geonames;
+	}
+	public void setGeonames(List<GeoName> geonames) {
+		this.geonames = geonames;
 	}
 
-	public int getResultado() {
-		return resultado;
-	}
-
-	public void setResultado(int resultado) {
-		this.resultado = resultado;
-	}
-
-	public List<GeoName> getGeoNames() {
-		return geoNames;
-	}
-
-	public void setGeoNames(List<GeoName> geoNames) {
-		this.geoNames = geoNames;
-	}
+	
 
 }

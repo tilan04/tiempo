@@ -1,24 +1,28 @@
 package es.pareja1.aplicacion.tiempo.dao;
 
-import java.util.List;
-
 import org.springframework.stereotype.Repository;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
-import es.pareja1.aplicacion.tiempo.entity.Bbox;
 import es.pareja1.aplicacion.tiempo.entity.GeoName;
+import es.pareja1.aplicacion.tiempo.entity.ResultadoGeo;
 
 @Repository
 public class GeoNameDao {
-	
-	private String asciiName;
-	private List<Bbox> bboxes;
-	
-//	public String getGeoName(String resultado) {
-//		
-//		GeoName busqueda = asciiName.stream().filter(geo->geo.getResultado()==resultado).findFirst().orElse(null);
-//		return busqueda.getResultado();
-//		
-//	
-//	}
 
+	private GeoName geoNames;
+	
+	private String uri="http://api.geonames.org/searchJSON?maxRows=20&startRow=0&lang=en&isNameRequired =true&style=FULL&username=ilgeonamessample";
+	
+	
+	public ResultadoGeo getURI(String nameCiudad) {
+	UriComponentsBuilder builder = UriComponentsBuilder
+	    .fromUriString(uri)
+	    // Añadir la query
+	    .queryParam("q", nameCiudad);
+
+	RestTemplate restTemplate = new RestTemplate();
+	ResultadoGeo response = restTemplate.getForObject(builder.toUriString(), ResultadoGeo.class);
+	return response;
+	}
 }

@@ -5,7 +5,8 @@ import org.springframework.stereotype.Service;
 import es.pareja1.aplicacion.tiempo.entity.ResultadoGeo;
 
 @Service
-public interface GeoNameService {
+public interface ResultadoGeoService {
 
-	public ResultadoGeo getListGeonames(String nameCiudad);
+	public ResultadoGeo getResultadoGeo(int result);
+	
 }

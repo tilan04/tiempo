@@ -1,11 +1,18 @@
 package es.pareja1.aplicacion.tiempo.entity;
 
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
 public class Bbox {
 	private long north;
 	private long south;
 	private long east;
 	private long west;
 
+	public Bbox () {}
 	public Bbox(long north, long south, long east, long west) {
 		super();
 		this.north = north;

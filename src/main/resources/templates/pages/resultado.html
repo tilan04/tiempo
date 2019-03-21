@@ -1,13 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:with="http://www.thymeleaf.org/extras/with"
-	layout:decorate="~{layout}"
-	with:title="'El tiempo'">
-<th:block layout:fragment="content">
-	<p>Inicio de la aplicacion</p>
-	
-</th:block>
+	layout:decorate="~{layout}" with:title="'El tiempo'">
+
+<body>
+<p th:text="${#request.getParameter('q')" >Prueba </p>
+</body>
 </html>

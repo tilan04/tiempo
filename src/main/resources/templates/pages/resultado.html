@@ -7,6 +7,6 @@
 	layout:decorate="~{layout}" with:title="'El tiempo'">
 
 <body>
-<p th:text="${#request.getParameter('q')" >Prueba </p>
+<p th:text="${#request.getParameter('q')" >${request.getParameter}</p>
 </body>
 </html>

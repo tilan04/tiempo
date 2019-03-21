@@ -8,10 +8,11 @@
 <body>
 	<h1>Ingrese la ciudad que quiere consultar</h1>
 
-	<form action="resultadoPeticiones" method="post">
-	<p th:text="${#request.getParameter('q')" >Nombre:</p>
-		 <br /> <input type="text" name="nombre"> Buscar <input type="submit" />
+	<form th:action="@{/resultadoPeticiones}" method="post">
+		<p>Nombre:</p>
+		<br /> <input type="text" name="asciiName"> Buscar <button type="submit">Submit</button>
+
 	</form>
-	
+
 </body>
 </html>

@@ -6,20 +6,20 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import es.pareja1.aplicacion.tiempo.service.GeoNameService;
 import es.pareja1.aplicacion.tiempo.service.ResultadoGeoService;
 
 @Controller
 public class ResultadoGeoNameController {
 
-	
 	@Resource 
-	ResultadoGeoService resultadoGeoService;
+	private GeoNameService geoNameService;
 	
-	@RequestMapping("/resultado") // Indicamos la URL con la que se ejecuta
+	@RequestMapping("/formulario_busqueda") // Indicamos la URL con la que se ejecuta
 	public ModelAndView getBbox() {
 		//ResultadoGeoService r = //resultadoGeoService.getListGeonames("Madrid");
 
-		return new ModelAndView("pages/resultado").addObject("nombre", "Mundo");
+		return new ModelAndView("pages/formulario_busqueda").addObject("nombre", "Mundo");
 //	-Nombre de la plantilla HTML-  //-Informacion para la página, para el Modelo-s
 	}
 	

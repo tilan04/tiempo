@@ -26,6 +26,7 @@ public class GeoNameController {
 	@Resource 
 	private GeoNameService geoNameService;
 	
+	
 	@RequestMapping("/index") // Indicamos la URL con la que se ejecuta
 	public ModelAndView getSaludo() {
 		ResultadoGeo r = geoNameService.getListGeonames("Madrid");
@@ -36,19 +37,23 @@ public class GeoNameController {
 //	-Nombre de la plantilla HTML-  //-Informacion para la página, para el Modelo-
 	}
 	
-	@GetMapping("/pages/formulario_busqueda")
-	public String getGeoNames(Model model,
-	    @ModelAttribute("geonames") GeoName geonames,
-	    BindingResult result) {
-	    List<GeoName> ciudades = null;//Modificar
-	    model.addAttribute("products", ciudades);
+	@GetMapping("/pages/resultado")
+	public String getGeoNames(GeoName geo) {
+		
+		//ResultadoGeo r = geoNameService.getListGeonames(this.getAsciiName(geo));
 	    return "pages/resultado";
 	}
 	
-	@RequestMapping(value="/pages/resultado", method=RequestMethod.GET)
-	public String listGeoNames(@RequestParam String nameCiudad) { 
-		ResultadoGeo r = geoNameService.getListGeonames("Madrid");
-	    return "/pages/resultado";
+	@RequestMapping(value="/resultadoPeticiones",method=RequestMethod.POST) // Indicamos la URL con la que se ejecuta
+	public String getAsciiName(@ModelAttribute String asciiName) {
+		//String nombreCiudad=geoName.getAsciiName();
+		return asciiName;
 	}
+	
+//	@RequestMapping("/pages/resultado")
+//	public String listGeoNames(@RequestParam String nameCiudad) { 
+//		ResultadoGeo r = geoNameService.getListGeonames("Madrid");
+//	    return "/pages/resultado";
+//	}
 
 }

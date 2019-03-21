@@ -15,6 +15,11 @@ public class WeatherObservations {
 	private String windSpeed;
 	private String temperature;
 	private int humidity;
+	
+	
+
+	public WeatherObservations() {
+	}
 
 	public WeatherObservations(double lng, double lat, String stationName, String weatherCondition, int windDirection,
 			String windSpeed, String temperature, int humidity) {

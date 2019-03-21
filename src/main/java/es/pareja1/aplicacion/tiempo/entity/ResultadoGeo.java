@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class ResultadoGeo {
+	
 	private int totalResultsCount;
 	private List<GeoName> geonames;
 

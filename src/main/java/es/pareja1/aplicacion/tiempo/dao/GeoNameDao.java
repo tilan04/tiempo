@@ -12,7 +12,7 @@ public class GeoNameDao {
 
 	private GeoName geoNames;
 	
-	private String uri="http://api.geonames.org/searchJSON?maxRows=20&startRow=0&lang=en&isNameRequired =true&style=FULL&username=ilgeonamessample";
+	private String uri="http://api.geonames.org/searchJSON?maxRows=20&startRow=0&lang=en&isNameRequired=true&style=FULL&username=ilgeonamessample";
 	
 	
 	public ResultadoGeo getURI(String nameCiudad) {

@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import es.pareja1.aplicacion.tiempo.entity.Bbox;
 import es.pareja1.aplicacion.tiempo.entity.GeoName;
 import es.pareja1.aplicacion.tiempo.entity.ResultadoGeo;
+import es.pareja1.aplicacion.tiempo.entity.WeatherObservations;
 import es.pareja1.aplicacion.tiempo.service.GeoNameService;
 
 @Controller
@@ -27,8 +29,10 @@ public class GeoNameController {
 	@RequestMapping("/index") // Indicamos la URL con la que se ejecuta
 	public ModelAndView getSaludo() {
 		ResultadoGeo r = geoNameService.getListGeonames("Madrid");
+		Bbox b = r.getGeonames().get(0).getBbox();
+		 List<WeatherObservations> listaObservaciones = geoNameService.getListWeatherObservation (b);
 
-		return new ModelAndView("pages/index2").addObject("nombre", "Mundo");
+		return new ModelAndView("pages/index").addObject("nombre", "Mundo");
 //	-Nombre de la plantilla HTML-  //-Informacion para la página, para el Modelo-
 	}
 	

@@ -7,13 +7,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Bbox {
-	private long north;
-	private long south;
-	private long east;
-	private long west;
+	
+	private double north;
+	private double south;
+	private double east;
+	private double west;
 
 	public Bbox () {}
-	public Bbox(long north, long south, long east, long west) {
+	public Bbox(double north, double south, double east, double west) {
 		super();
 		this.north = north;
 		this.south = south;
@@ -21,35 +22,35 @@ public class Bbox {
 		this.west = west;
 	}
 
-	public long getNorth() {
+	public double getNorth() {
 		return north;
 	}
 
-	public void setNorth(long north) {
+	public void setNorth(double north) {
 		this.north = north;
 	}
 
-	public long getSouth() {
+	public double getSouth() {
 		return south;
 	}
 
-	public void setSouth(long south) {
+	public void setSouth(double south) {
 		this.south = south;
 	}
 
-	public long getEast() {
+	public double getEast() {
 		return east;
 	}
 
-	public void setEast(long east) {
+	public void setEast(double east) {
 		this.east = east;
 	}
 
-	public long getWest() {
+	public double getWest() {
 		return west;
 	}
 
-	public void setWest(long west) {
+	public void setWest(double west) {
 		this.west = west;
 	}
 

@@ -1,11 +1,5 @@
 package es.pareja1.aplicacion.tiempo.entity;
 
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
 public class WeatherObservations {
 	
 	private double lng;

@@ -4,10 +4,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:with="http://www.thymeleaf.org/extras/with"
-	layout:decorate="~{layout}"
-	with:title="'El tiempo'">
+	layout:decorate="~{layout}" with:title="'El tiempo'">
+
 <th:block layout:fragment="content">
-	<p>Inicio de la aplicacion</p>
-	
+
+	<div class="row">
+		<div class="col-md-6">
+
+<!-- 			<th:block th:fragment="form"> -->
+
+				<form th:action="@{/resultado}" th:object="${geoNames}" method="post">
+					<div class="form-group">
+						<label for="formulario">Nombre ciudad</label> 
+						<input type="text" 
+							name="nombre" aria-describedby="busqueda"
+							value="Introduzca la ciudad...">
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+
+<!-- 			</th:block> -->
+
+		</div>
+	</div>
+
 </th:block>
+
 </html>

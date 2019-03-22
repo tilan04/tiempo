@@ -8,7 +8,7 @@ public class ControladorHola {
 
   public static final String VIEW_INDEX = "pages/index";
 
-  @RequestMapping(value = "/")
+  @RequestMapping(value = "")
   public String getHome() {
     return VIEW_INDEX;
   }

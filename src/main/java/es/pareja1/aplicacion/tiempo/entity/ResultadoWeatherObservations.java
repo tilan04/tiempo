@@ -3,11 +3,7 @@ package es.pareja1.aplicacion.tiempo.entity;
 
 import java.util.List;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
 public class ResultadoWeatherObservations {
 	
 	private List<WeatherObservations> weatherObservations;

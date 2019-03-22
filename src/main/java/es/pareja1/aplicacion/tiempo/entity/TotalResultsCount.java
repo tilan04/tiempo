@@ -3,18 +3,14 @@ package es.pareja1.aplicacion.tiempo.entity;
 
 import java.util.List;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
-@Data
-@NoArgsConstructor
-public class ResultadoGeo {
+public class TotalResultsCount {
 	
 	private int totalResultsCount;
-	private List<GeoName> geonames;
+	private List<GeoNames> geonames;
 
-	public ResultadoGeo () {}
-	public ResultadoGeo(int totalResultsCount, List<GeoName> geoNames) {
+	public TotalResultsCount () {}
+	public TotalResultsCount(int totalResultsCount, List<GeoNames> geoNames) {
 		super();
 		this.totalResultsCount = totalResultsCount;
 		this.geonames = geoNames;
@@ -25,10 +21,10 @@ public class ResultadoGeo {
 	public void setTotalResultsCount(int totalResultsCount) {
 		this.totalResultsCount = totalResultsCount;
 	}
-	public List<GeoName> getGeonames() {
+	public List<GeoNames> getGeonames() {
 		return geonames;
 	}
-	public void setGeonames(List<GeoName> geonames) {
+	public void setGeonames(List<GeoNames> geonames) {
 		this.geonames = geonames;
 	}
 

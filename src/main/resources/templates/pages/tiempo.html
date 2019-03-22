@@ -4,17 +4,77 @@
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:with="http://www.thymeleaf.org/extras/with"
 	layout:decorate="~{layout}" with:title="'El tiempo'">
+	
+		<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF32xL3QN-_imFzooi2vHWpDaJcS7CvfQ&callback=initMap">
+</script>
+	
 <head>
-    <title>Getting Started: Handling Form Submission</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Getting Started: Handling Form Submission</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<a href="/">Enlace</a>
 	<h1>Form</h1>
-<!--    <h1 th:text = "${geoName.asciiName}"></h1> -->
-      
-      
-    <h1 th:text = "${ciudadBuscada}"></h1>
-    
-    
-    </body>
+
+
+	<h1 th:text="${ciudadBuscada}"></h1>
+	<h1 th:text="${temperaturaMedia}"></h1>
+	<h1 th:text="${humedadMedia}"></h1>
+	<h1 th:text="${vientoMedia}"></h1>
+
+  
+
+	<div th:each="stationName : ${listaObservaciones}">
+	
+		<th scope="row"><span id="nombre" data-type="text"
+			data-title="Estacion" class="inline-editable"
+			th:text="*{stationName.lat}">Nombre ciudad</span></th>
+	</div>
+	bbb
+	    <p th:each="stationName2 : ${listaObservaciones}"
+       th:text="${stationName2.stationName}">A aa</p>
+       ccc
+       
+       <span th:each="stationName3 : ${listaObservaciones}">
+    <span th:text="${stationName3.lat}"></span>
+</span>
+dd
+    <div id="map" style="height: 600px; width: 100%"></div>
+ee
+</body>
+<script th:inline="javascript">
+/*<![CDATA[*/
+var lati =  /*[[${geoName.lat}]]*/ ;
+var longi = /*[[${geoName.lng}]]*/;
+    var theList = /*[[${listaObservaciones}]]*/;
+  
+/*]]>*/
+
+var map;
+function initMap() {
+map = new google.maps.Map(document.getElementById('map'), {
+center : {
+	lat :lati,
+	lng :longi
+},
+zoom : 10
+});
+for (i = 0; i < theList.length; i++) {
+
+var marker = new google.maps.Marker({
+position : {
+lat : theList[i].lat,
+lng : theList[i].lng
+},
+map : map,
+title : theList[i].stationName
+});
+  }
+}
+</script>
+
 </html>
+
+
+

@@ -12,4 +12,5 @@ public interface ResultWeatherObservationService {
 	public double getMediaTemperaturas(List<WeatherObservations> listTemperatureObservation);
 	public double getMediaHumedad(List<WeatherObservations> listHumedadObservation);
 	public double getMediaViento(List<WeatherObservations> listVientoObservation);
+	public String getStationName(List<WeatherObservations> listVientoObservation);
 }

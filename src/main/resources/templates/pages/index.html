@@ -27,7 +27,11 @@
 
 		</div>
 	</div>
-
+	
+	  <div th:each="session : ${listaBusquedas}"
+       th:text="${session.mySession}">___________________</div>
+       
+<!-- <div th:text="${session.mySession}">...</div> -->
 </th:block>
 
 </html>

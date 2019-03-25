@@ -14,34 +14,19 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF32xL3QN-_imFzooi2vHWpDa
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
+<div class="container">
 <a href="/">Enlace</a>
-	<h1>Form</h1>
-
-
-	<h1 th:text="${ciudadBuscada}"></h1>
-	<h1 th:text="${temperaturaMedia}"></h1>
-	<h1 th:text="${humedadMedia}"></h1>
-	<h1 th:text="${vientoMedia}"></h1>
-
-  
-
-	<div th:each="stationName : ${listaObservaciones}">
-	
-		<th scope="row"><span id="nombre" data-type="text"
-			data-title="Estacion" class="inline-editable"
-			th:text="*{stationName.lat}">Nombre ciudad</span></th>
-	</div>
-	bbb
-	    <p th:each="stationName2 : ${listaObservaciones}"
-       th:text="${stationName2.stationName}">A aa</p>
-       ccc
-       
-       <span th:each="stationName3 : ${listaObservaciones}">
-    <span th:text="${stationName3.lat}"></span>
-</span>
-dd
-    <div id="map" style="height: 600px; width: 100%"></div>
-ee
+    <div class="row datosMapaCiudad">
+        <div class="datosCiudad col-sm-3">
+        Ciudad buscada: <span th:text="${ciudadBuscada}"></span>
+	Temperatura: <span th:text="${temperaturaMedia}"></span>
+	Huemadad: <span th:text="${humedadMedia}"></span>
+	Velocidad viento: <span th:text="${vientoMedia}"></span> </div>
+        <div class="mapaCiudad col-sm-5">
+        <div id="map" style="height: 600px; width: 100%"></div></div>
+    </div>
+</div>
+    
 </body>
 <script th:inline="javascript">
 /*<![CDATA[*/

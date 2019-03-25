@@ -34,10 +34,10 @@
 		</div>
 		<!-- 	</div> -->
 	</div>
-	<!-- 	  <div th:each="mySession : ${listaBusquedas}" -->
-	<!--        th:text="${mySession.mySession}">___________________</div> -->
-
-	<div th:text="${session.mySession}">...</div>
+       
+    <div th:each="ciudad : ${session.mySession}">
+        <a th:href="@{|/resultado?nombre=${ciudad}|}"><p th:text="${ciudad}"></p></a>
+    </div>
 </th:block>
 
 </html>

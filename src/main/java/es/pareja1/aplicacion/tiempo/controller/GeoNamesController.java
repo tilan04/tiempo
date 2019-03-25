@@ -22,6 +22,7 @@ import es.pareja1.aplicacion.tiempo.entity.Bbox;
 import es.pareja1.aplicacion.tiempo.entity.TotalResultsCount;
 import es.pareja1.aplicacion.tiempo.entity.WeatherObservations;
 import es.pareja1.aplicacion.tiempo.service.GeoNamesService;
+import es.pareja1.aplicacion.tiempo.service.ResultWeatherObservationService;
 import es.pareja1.aplicacion.tiempo.service.ResultWeatherObservationServiceImpl;
 
 @Controller
@@ -97,18 +98,9 @@ public class GeoNamesController {
 		model.addAttribute("listaObservaciones", listaObservaciones);
 		model.addAttribute("geoName", r.getGeonames().get(0));
 
-//    		model.addAttribute("stationName",weather.getStationName(listaObservaciones));
-		
-	    if (errorBinding.hasErrors()) {
-	        return "signup";
-	    }
-
 	    //do some processin
 		if (listaObservaciones != null) {
 			listaBusquedas.add(nombre);
-			for (String ciudad : listaBusquedas) {
-				System.out.println(ciudad.toString());
-			}
 		}
 		return "pages/tiempo";
 	}

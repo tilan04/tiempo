@@ -6,32 +6,38 @@
 	xmlns:with="http://www.thymeleaf.org/extras/with"
 	layout:decorate="~{layout}" with:title="'El tiempo'">
 
-<th:block layout:fragment="content">
 
+
+
+<th:block layout:fragment="content">
+	<!-- <div th:replace="fragments/header :: header"> -->
 	<div class="row">
 		<div class="col-md-6">
 
-<!-- 			<th:block th:fragment="form"> -->
+			<!-- 			<th:block th:fragment="form"> -->
 
-				<form th:action="@{/resultado}" th:object="${geoNames}" method="post">
-					<div class="form-group">
-						<label for="formulario">Nombre ciudad</label> 
-						<input type="text" 
-							name="nombre" aria-describedby="busqueda"
-							value="Introduzca la ciudad...">
-					</div>
-					<button type="submit" class="btn btn-primary">Submit</button>
-				</form>
+			<form th:action="@{/resultado}" th:object="${geoNames}" method="post">
+				<div class="form-group">
+					<label for="formulario">Nombre ciudad</label> <input type="text"
+						name="nombre" aria-describedby="busqueda"
+						value="Introduzca la ciudad...">
+				</div>
+				<div class="alert alert-primary" role="alert">
+					No existe la ciudad
+					<button type="submit" class="btn btn-primary" role="alert">Submit</button>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
 
-<!-- 			</th:block> -->
+			<!-- 			</th:block> -->
 
 		</div>
+		<!-- 	</div> -->
 	</div>
-	
-	  <div th:each="session : ${listaBusquedas}"
-       th:text="${session.mySession}">___________________</div>
-       
-<!-- <div th:text="${session.mySession}">...</div> -->
+	<!-- 	  <div th:each="mySession : ${listaBusquedas}" -->
+	<!--        th:text="${mySession.mySession}">___________________</div> -->
+
+	<div th:text="${session.mySession}">...</div>
 </th:block>
 
 </html>

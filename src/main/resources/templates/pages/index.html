@@ -11,8 +11,6 @@
 	<div class="row">
 		<div class="col-md-6">
 
-<!-- 			<th:block th:fragment="form"> -->
-
 				<form th:action="@{/resultado}" th:object="${geoNames}" method="post">
 					<div class="form-group">
 						<label for="formulario">Nombre ciudad</label> 
@@ -23,15 +21,12 @@
 					<button type="submit" class="btn btn-primary">Submit</button>
 				</form>
 
-<!-- 			</th:block> -->
-
 		</div>
 	</div>
-	
-	  <div th:each="session : ${listaBusquedas}"
-       th:text="${session.mySession}">___________________</div>
        
-<!-- <div th:text="${session.mySession}">...</div> -->
+    <div th:each="ciudad : ${session.mySession}">
+        <a th:href="@{|/resultado?nombre=${ciudad}|}"><p th:text="${ciudad}"></p></a>
+    </div>
 </th:block>
 
 </html>

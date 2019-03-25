@@ -6,6 +6,7 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ import es.pareja1.aplicacion.tiempo.entity.Bbox;
 import es.pareja1.aplicacion.tiempo.entity.TotalResultsCount;
 import es.pareja1.aplicacion.tiempo.entity.WeatherObservations;
 import es.pareja1.aplicacion.tiempo.service.GeoNamesService;
+import es.pareja1.aplicacion.tiempo.service.ResultWeatherObservationService;
 import es.pareja1.aplicacion.tiempo.service.ResultWeatherObservationServiceImpl;
 
 @Controller
@@ -27,6 +29,8 @@ public class GeoNamesController {
 	@Resource
 	private GeoNamesService geoNamesService;
 
+	@Autowired
+	ResultWeatherObservationService weather;
 	private List<String> listaBusquedas = new ArrayList<String>();
 
 	@RequestMapping("/index") // Indicamos la URL con la que se ejecuta
@@ -64,8 +68,8 @@ public class GeoNamesController {
 //		return asciiName;
 //	}
 
-	@RequestMapping(value = "/resultado", method = RequestMethod.POST)
-	public String greetingSubmit(String nombre, Model model, ResultWeatherObservationServiceImpl weather) {
+	@RequestMapping(value = "/resultado", method = {RequestMethod.POST, RequestMethod.GET})
+	public String greetingSubmit(String nombre, Model model) {
 
 		model.addAttribute("ciudadBuscada", nombre);
 		TotalResultsCount r = geoNamesService.getListGeonames(nombre);
